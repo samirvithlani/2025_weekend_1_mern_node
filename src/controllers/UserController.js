@@ -41,6 +41,22 @@ const getUserById = (req,res)=>{
     //check if user avaialble then send user obj
     //not avaialble then send message user is not found
     //send res from if and else boh
+
+    const foundUser = users.find((user)=>user.id == req.params.id)
+    console.log(foundUser)
+    if(foundUser){
+        res.json({
+            message:"user found",
+            data:foundUser
+        })
+    }
+    else{
+        res.json({
+            message:"user not found..",
+        })
+    }
+    
+
 }
 
 module.exports = {

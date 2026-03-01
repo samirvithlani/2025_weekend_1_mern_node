@@ -56,3 +56,13 @@ nodemon app.js
 naming convention:
 UserController
 user_controller
+
+
+<-------------------->
+3 api getEmployee
+getALlEmployees
+getEmployeebyid ->20
+
+controllers --> EmployeeController
+routes ---> EmployeeRoutes
+app.js ---> routes bind..
