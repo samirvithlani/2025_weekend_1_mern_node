@@ -6,5 +6,6 @@ const userController = require("../controllers/UserController")
 router.get("/user",userController.getUser)
 //localhost:3000/users
 router.get("/users",userController.getAllUsers)
+router.get("/user/:id",userController.getUserById)
 
 module.exports = router

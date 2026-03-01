@@ -31,7 +31,18 @@ const getAllUsers = (req, res) => {
         data:users
     })
 };
+const getUserById = (req,res)=>{
+    //id -->req
+    //url --> req.params --{}
+    console.log("req.params",req.params)
+    console.log("req.params.id",req.params.id)
+    //id ->user array find -->
+    //HINT: use find function of array
+    //check if user avaialble then send user obj
+    //not avaialble then send message user is not found
+    //send res from if and else boh
+}
 
 module.exports = {
-  getUser,getAllUsers
+  getUser,getAllUsers,getUserById
 };
