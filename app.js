@@ -1,16 +1,12 @@
-console.log("app file loaded..")
-const user = require("./users")
-const employee = require("./employee")
-
-console.log(user)
-console.log(user.userName)
-console.log(user.userAge)
+const express = require("express")
+//express -->referance...
+const app = express() 
 
 
-//individual import from file..
-// console.log(employee)
-// employee()
 
-//console.log(employee) //{}
-employee.getEmployeeData(101,"raj")
-employee.printEmployeeData()
+//server calling..
+//port variable dec
+const PORT = 3000
+app.listen(PORT,()=>{
+    console.log(`server started on port ${PORT}`)
+})

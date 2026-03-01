@@ -1,0 +1,55 @@
+-->score.js --->
+app.js --> json array -->{pname,score} ---> 
+function ---> return total score of match
+store.js : writeDatainFile(filename,score) --> 
+     --->result.txt,100 --> data
+     score = 100
+
+hint use fs package for write data in file
+const fs = require("fs") :node js builtin package..
+<<<------------------------------------------------>>
+API CREATION:
+Node HTTP module : builtin: --> if else..
+
+
+express: 
+npm i express
+
+--------------------->
+src
+ controllers  : api business logic
+ models  : database layer: 
+ utils
+ routes : api end points : http://facebook.com/api1,/...api2,...api3
+
+
+ -->web application 
+request --> response
+
+Server: request response:
+php,java,.net : 3rd party server
+
+python ,node --> own server --> server up[call]
+
+
+SERVER :- app.js -->request -> routes --> function call -->controllers bind[models]
+
+UserModule -->
+app.js -->request -->userRoutes -->userController [models] --> 
+  
+static api : without db:
+
+GET POST PUT DELETE
+
+GET :->
+browser is only capable to call get api
+POSTMAN
+
+DEVTOOLS:
+hot reloading: save --> changes ---> server auto restart
+
+//system  || dev depedancy
+
+npm i nodemon -g
+
+nodemon app.js
