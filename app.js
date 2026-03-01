@@ -2,6 +2,11 @@ const express = require("express")
 //express -->referance...
 const app = express() 
 
+//routes
+const userRoutes = require("./src/routes/UserRoutes")
+//bind with express
+app.use(userRoutes)
+
 
 
 //server calling..

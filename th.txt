@@ -49,7 +49,10 @@ DEVTOOLS:
 hot reloading: save --> changes ---> server auto restart
 
 //system  || dev depedancy
-
 npm i nodemon -g
 
 nodemon app.js
+
+naming convention:
+UserController
+user_controller
