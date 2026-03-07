@@ -66,3 +66,14 @@ getEmployeebyid ->20
 controllers --> EmployeeController
 routes ---> EmployeeRoutes
 app.js ---> routes bind..
+
+
+db connection:
+mongo db :
+package :mongodb: manual process : db creation: collection -->
+
+ 2) orm : mongoose
+
+ npm i mongoose
+
+ app.js --> routes ---> controller -->model [db table] -->data  --->response...
