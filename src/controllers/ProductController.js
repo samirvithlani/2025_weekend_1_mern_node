@@ -64,7 +64,39 @@ const getProductById = async (req, res) => {
   }
 };
 
+
+const deleteProduct = async(req,res)=>{
+  //db.products.removeOne({_id:ObjectId(req.params.id)})
+  //productSchema.deleteOne({_id:ObjectId(req.params.id)})
+
+  try{
+
+    const id = req.params.id;
+    const deletedProductObj = await productSchema.findByIdAndDelete(id);
+    if(deletedProductObj){
+    res.json({
+      message:"product deleted",
+      data:deletedProductObj
+    })
+  }else{
+    res.json({
+      message:"product not found to delete",
+      
+    })
+  }
+
+
+  }catch(err){
+    res.json({
+      message:"error while deleating user...",
+      err:err
+    })
+  }
+
+}
+
 module.exports = {
   getAllProducts,
   getProductById,
+  deleteProduct
 };
