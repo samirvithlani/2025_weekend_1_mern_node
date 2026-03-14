@@ -77,3 +77,10 @@ package :mongodb: manual process : db creation: collection -->
  npm i mongoose
 
  app.js --> routes ---> controller -->model [db table] -->data  --->response...
+
+
+ books model,controller,routes
+ create books
+ delete
+ get by id
+ get all
