@@ -95,8 +95,34 @@ const deleteProduct = async(req,res)=>{
 
 }
 
+//POST:
+const createProduct = async(req,res)=>{
+
+  //productmodel 
+  //url -->req.params --->url
+  //create ---> params.. post method -->req.body
+  console.log("req.body....",req.body)
+  try{
+
+    const savedProduct = await productSchema.create(req.body)
+    res.status(201).json({
+      message:"product created.",
+      data:savedProduct
+    })
+
+  }catch(err){
+    res.status(500).json({
+      message:"error while create product",
+      err:err
+    })
+  }
+
+}
+
+
 module.exports = {
   getAllProducts,
   getProductById,
-  deleteProduct
+  deleteProduct,
+  createProduct
 };

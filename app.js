@@ -3,7 +3,7 @@ const express = require("express")
 const app = express() 
 const dbConnection= require("./src/utils/DBConnection")
 dbConnection() //db connnection function call..
-
+app.use(express.json()) //allowing data type as json "ALSO"
 
 //routes
 const userRoutes = require("./src/routes/UserRoutes")

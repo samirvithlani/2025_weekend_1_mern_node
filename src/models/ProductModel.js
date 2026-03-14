@@ -9,6 +9,10 @@ const productSchema = new Schema({
     },
     productPrice:{
         type:Number
+    },
+    productStock:{
+        type:Number,
+        required:true
     }
 })
 
