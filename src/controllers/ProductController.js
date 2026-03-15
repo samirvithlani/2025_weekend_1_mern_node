@@ -118,11 +118,69 @@ const createProduct = async(req,res)=>{
   }
 
 }
+//UPDATE PRODUCT
+//update products set prnam?.?// where id =?
+//{} -->new objecy -->req.body
+//id --where --> req.params
+const updateProduct = async(req,res)=>{
 
+  const id = req.params.id;
+  const newData = req.body;
+
+  try{
+
+    //db.products.updateOne(id,{$set:{productName:req.body.name,..}})
+    //const updatedProductObj = await productSchema.findByIdAndUpdate(id,newData)
+    const updatedProductObj = await productSchema.findByIdAndUpdate(id,newData,{new:true})
+    res.status(200).json({
+      message:"product updated..",
+      data:updatedProductObj
+    })
+
+  }catch(err){
+
+    res.status(500).json({
+      message:"error while update product",
+      err:err
+    })
+  }
+
+
+
+}
+
+//check if color is already exists dont add it. return message that color is exist..
+const addColor = async(req,res)=>{
+
+  const color = req.body.color
+  const id = req.params.id;
+
+  try{
+    //const updatedProductObj = await productSchema.findByIdAndUpdate(id,{$push:{columnName:req.body.color}})
+    const updatedProductObj = await productSchema.findByIdAndUpdate(id,{$push:{colors:color}},{new:true})
+    res.status(200).json({
+      message:"color added",
+      data:updatedProductObj
+    })
+
+
+
+  }catch(err){
+    res.status(500).json({
+      message:"error while adding color",
+      err:err
+    })
+  }
+
+}
+//remove color
+//replace $push with $pull
 
 module.exports = {
   getAllProducts,
   getProductById,
   deleteProduct,
-  createProduct
+  createProduct,
+  updateProduct,
+  addColor
 };

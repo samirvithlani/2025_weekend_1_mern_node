@@ -5,7 +5,9 @@ const Schema = mongoose.Schema;
 const productSchema = new Schema({
 
     productName:{
-        type:String
+        type:String,
+        trim:true
+
     },
     productPrice:{
         type:Number
@@ -13,7 +15,24 @@ const productSchema = new Schema({
     productStock:{
         type:Number,
         required:true
+    },
+    productSKU:{
+        type:String,
+        unique:true
+    },
+    productSize:{
+        enum:["S","M","L","XL","XXL"],
+        type:String,
+    },
+    colors:{
+        type:[String],
+    },
+    productStatus:{
+        type:String,
+        enum:["Active","Inactive","Deleted"],
+        default:"Active"
     }
+    
 })
 
 module.exports = mongoose.model("products",productSchema)
