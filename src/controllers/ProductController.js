@@ -176,11 +176,27 @@ const addColor = async(req,res)=>{
 //remove color
 //replace $push with $pull
 
+const searchProduct = async(req,res)=>{
+
+  const query = req.query;
+  //const foundProducts  = productSchema.find({productName:"abcd"})
+  console.log(req.query)
+  const foundProducts  = await productSchema.find(query)
+  res.json({
+    message:"products",
+    data:foundProducts
+  })
+  
+
+}
+
+
 module.exports = {
   getAllProducts,
   getProductById,
   deleteProduct,
   createProduct,
   updateProduct,
-  addColor
+  addColor,
+  searchProduct
 };

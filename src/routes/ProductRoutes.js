@@ -6,4 +6,5 @@ router.delete("/product/:id",productController.deleteProduct)
 router.post("/product",productController.createProduct)
 router.put("/product/:id",productController.updateProduct)
 router.put("/addcolor/:id",productController.addColor)
+router.get("/searchprod",productController.searchProduct)
 module.exports = router
