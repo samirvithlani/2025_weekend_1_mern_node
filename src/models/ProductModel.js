@@ -31,6 +31,10 @@ const productSchema = new Schema({
         type:String,
         enum:["Active","Inactive","Deleted"],
         default:"Active"
+    },
+    categoryId:{
+        type:mongoose.Types.ObjectId,
+        ref:"category"
     }
     
 })

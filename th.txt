@@ -84,3 +84,21 @@ package :mongodb: manual process : db creation: collection -->
  delete
  get by id
  get all
+ <----------------------------->
+ collection --> relation:
+ FK:
+ product table --> product detail
+ name,price   ---> colors,selrre,aksnalsaskas
+
+ user -- cart
+ user -->order
+
+ product -->category
+
+ create table category(id int pk au,name varchar())
+ id[pk] name
+
+
+ create table products(id int pk ainc,....,categoryId int referace(category) fk)
+
+ select * from p njoin category

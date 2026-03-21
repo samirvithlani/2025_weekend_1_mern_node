@@ -8,11 +8,16 @@ app.use(express.json()) //allowing data type as json "ALSO"
 //routes
 const userRoutes = require("./src/routes/UserRoutes")
 //bind with express
-app.use(userRoutes)
+//app.use(userRoutes)
+app.use("/user",userRoutes)
 
 const productRoutes = require("./src/routes/ProductRoutes")
-app.use(productRoutes)
+//app.use(productRoutes)
+app.use("/product",productRoutes)
 
+
+const categoryRoutes = require("./src/routes/CategoryRoutes")
+app.use("/category",categoryRoutes)
 
 
 

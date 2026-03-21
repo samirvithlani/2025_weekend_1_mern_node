@@ -3,7 +3,9 @@ const productSchema = require("../models/ProductModel");
 //api -->function
 const getAllProducts = async (req, res) => {
   //database record --> connected---> table --> products == productSchema
-  const allproducts = await productSchema.find();
+  //const allproducts = await productSchema.find();
+  //const allproducts = await productSchema.find().populate("categoryId","name")
+  const allproducts = await productSchema.find().populate("categoryId")
   res.json({
     message: "products fetched..",
     data: allproducts,
