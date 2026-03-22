@@ -1,64 +1,30 @@
-//functions
+const userSchema = require("../models/UserModel")
+const bcrypt = require("bcrypt")
+const mailSend = require("../utils/MailUtil")
 
-//req -->request
-//res -->response..
+const createUser = async(req,res)=>{
 
-const useObj = {
-  id: 101,
-  name: "amit",
-  age: 23,
-};
+    try{
 
-const getUser = (req, res) => {
-  console.log("get user api called...");
-  //res.send("user api called...")
-  //res.send(useObj)
-  res.json({
-    message: "user api called..",
-    data: useObj,
-  });
-};
+        //req.body.
+        const hashedPassword =bcrypt.hashSync(req.body.password,10)
+        //const savedUser = await userSchema.create(req.body)
+        const savedUser = await userSchema.create({...req.body,password:hashedPassword})
+        //mail...
+        await mailSend(savedUser.email,"welcome","welcome to portal")
+        res.status(201).json({
+            message:"user saved Successfully",
+            data:savedUser
+        })
 
-const users = [
-  { id: 1, name: "jay", age: 24, salary: 34000 },
-  { id: 2, name: "jaya", age: 26, salary: 44000 },
-];
+    }catch(err){
 
-const getAllUsers = (req, res) => {
-
-    res.json({
-        message:"all users fetched !!",
-        data:users
-    })
-};
-const getUserById = (req,res)=>{
-    //id -->req
-    //url --> req.params --{}
-    console.log("req.params",req.params)
-    console.log("req.params.id",req.params.id)
-    //id ->user array find -->
-    //HINT: use find function of array
-    //check if user avaialble then send user obj
-    //not avaialble then send message user is not found
-    //send res from if and else boh
-
-    const foundUser = users.find((user)=>user.id == req.params.id)
-    console.log(foundUser)
-    if(foundUser){
-        res.json({
-            message:"user found",
-            data:foundUser
+        res.status(500).json({
+            message:"error while creating user.."
         })
     }
-    else{
-        res.json({
-            message:"user not found..",
-        })
-    }
-    
-
 }
 
-module.exports = {
-  getUser,getAllUsers,getUserById
-};
+module.exports={
+    createUser
+}
