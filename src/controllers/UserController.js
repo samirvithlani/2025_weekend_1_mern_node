@@ -11,7 +11,10 @@ const createUser = async(req,res)=>{
         //const savedUser = await userSchema.create(req.body)
         const savedUser = await userSchema.create({...req.body,password:hashedPassword})
         //mail...
-        await mailSend(savedUser.email,"welcome","welcome to portal")
+        var mailtest = `<html>
+                            <h1>HELLO</h1>
+                        </html>`
+        await mailSend(savedUser.email,"welcome",mailtest)
         res.status(201).json({
             message:"user saved Successfully",
             data:savedUser

@@ -102,3 +102,36 @@ package :mongodb: manual process : db creation: collection -->
  create table products(id int pk ainc,....,categoryId int referace(category) fk)
 
  select * from p njoin category
+
+
+ npm i nodemailer
+
+middleware: -->filter/middleware.. -->controller -->
+
+
+user -->param
+
+{
+    "name":"samir",
+    "age":23,
+    "email":"dhruv12@yopmail.com",
+    "password":"sam123"
+
+}
+
+name min 2 char -->if else ---> name should presnet -->1,2,
+age -->prestn 1 , min 18 -->2
+
+required: isRequired(param)-->valid true false
+
+zod validator..
+
+
+npm i zod...
+validationSchma-->
+userValidationschama
+-->requestValidator(userValidationschama)
+
+
+
+

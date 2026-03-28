@@ -12,7 +12,7 @@ const mailSend = async(to,subject,text)=>{
     const mailOption = {
         to:to,
         subject:subject,
-        text:text,
+        html:text,
         from:"pythonforsamir@gmail.com"
     }
     const mailresponse =await transport.sendMail(mailOption)
