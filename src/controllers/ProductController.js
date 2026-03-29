@@ -103,10 +103,12 @@ const createProduct = async(req,res)=>{
   //productmodel 
   //url -->req.params --->url
   //create ---> params.. post method -->req.body
+  console.log("req.file....",req.file)
   console.log("req.body....",req.body)
   try{
 
-    const savedProduct = await productSchema.create(req.body)
+    //const savedProduct = await productSchema.create(req.body)
+    const savedProduct = await productSchema.create({...req.body,productImage:req.file.path})
     res.status(201).json({
       message:"product created.",
       data:savedProduct

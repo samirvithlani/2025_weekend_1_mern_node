@@ -133,5 +133,20 @@ userValidationschama
 -->requestValidator(userValidationschama)
 
 
+file:
+1)server..
+2)db... -->
+3)cloud.. 
 
+
+product create image: file uploading
+
+middleware :-- local folder image upload --> path -->controller
+
+npm i multer
+
+
+array :
+
+db images array :
 
