@@ -1,5 +1,5 @@
 const productSchema = require("../models/ProductModel");
-
+const uploadToCloudinary = require("../utils/CloudinaryUtil")
 //api -->function
 const getAllProducts = async (req, res) => {
   //database record --> connected---> table --> products == productSchema
@@ -108,7 +108,11 @@ const createProduct = async(req,res)=>{
   try{
 
     //const savedProduct = await productSchema.create(req.body)
-    const savedProduct = await productSchema.create({...req.body,productImage:req.file.path})
+    const cloudinaryRes = await uploadToCloudinary(req.file.path)
+    console.log("cloudinary response......",cloudinaryRes)
+    //cloudinaryRes --{.....,secure_url} -->url -->image
+    //const savedProduct = await productSchema.create({...req.body,productImage:req.file.path})
+    const savedProduct = await productSchema.create({...req.body,productImage:cloudinaryRes.secure_url})
     res.status(201).json({
       message:"product created.",
       data:savedProduct
