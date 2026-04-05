@@ -150,3 +150,11 @@ array :
 
 db images array :
 
+Auth module
+auth2 security:
+web page:--> email password:
+secure api:-->email password:
+
+Movie tick: -- login -->bms -->movie->
+token: user --> login --> Object -->represent -->token
+json web token :JWT
