@@ -158,3 +158,16 @@ secure api:-->email password:
 Movie tick: -- login -->bms -->movie->
 token: user --> login --> Object -->represent -->token
 json web token :JWT
+
+<--------->
+
+forgotpassword
+1st api: forgotpassword --> req.body email -->
+user table email --> user object --> if email present get obejct email present -->error -->404
+
+
+
+if user found from email: geenrate token of that object -->
+
+after token genration -->send that token over mail to that user:
+
