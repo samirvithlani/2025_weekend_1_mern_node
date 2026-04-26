@@ -2,7 +2,7 @@ require("dotenv").config() //.env file load..
 const express = require("express")
 //express -->referance...
 const app = express() 
-
+const cron = require("node-cron")
 const dbConnection= require("./src/utils/DBConnection")
 dbConnection() //db connnection function call..
 app.use(express.json()) //allowing data type as json "ALSO"
@@ -26,6 +26,12 @@ app.use("/category",categoryRoutes)
 //server calling..
 //port variable dec
 //const PORT = 3000
+
+
+cron.schedule("*/10 * * * * *",()=>{
+    console.log("every minute...")
+})
+
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT,()=>{

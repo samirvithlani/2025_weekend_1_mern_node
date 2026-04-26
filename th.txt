@@ -171,3 +171,50 @@ if user found from email: geenrate token of that object -->
 
 after token genration -->send that token over mail to that user:
 
+<-------------->
+
+reset API:
+req.body.token --> get from email
+req.body.password -->
+
+
+api -->token decode --> user --> _id -> update --> update password
+cron jobs:
+
+background taks: 
+jobs: 
+eg: whatsapp : -> every day 2:pm chat backup
+mail:monday 
+cron jobs:
+node-cron package
+
+pattern
+
+* * * * *
+
+* --> min
+* --> hour
+* --> day
+* --> month
+* --> weekday
+
+
+npm i node-cron
+
+* --> second
+* --> min
+* --> hour
+* --> day
+* --> month
+* --> weekday
+
+
+
+-->
+cron job:
+
+2 cron job:
+1st cron job : datbase random number add -->model  [cronDemo]-> randomNo  /10 -->second number
+
+2nd cron job runs at every minute --> remove last 3 record from db
+
