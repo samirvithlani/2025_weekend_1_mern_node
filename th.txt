@@ -215,6 +215,38 @@ cron job:
 
 2 cron job:
 1st cron job : datbase random number add -->model  [cronDemo]-> randomNo  /10 -->second number
-
 2nd cron job runs at every minute --> remove last 3 record from db
+<--------------------------------------------->
 
+cron job: it will take backup of mongo db --> zip/rar/--> daily 1:00 mail
+
+
+
+speed : response
+
+Royal --> batch start -->dp -->cabin --> input -->
+
+userReg: mail
+form -->submit -->mail[slow]
+response -->userRegiter -->
+mail -->queue
+
+order-->payment -->pdf-->50
+
+broker system  + queue [redis+blullmq]
+redis+blullmq
+
+wsl:windows liunx operatong sysyem:
+
+online live redis server buy[free] -->render
+
+how to install wsl ?? ->
+how to create redis server in render --> ??
+
+ioredis
+bullmq
+
+redis server --->wsl
+
+broker db --> inmemoery db:
+queue
