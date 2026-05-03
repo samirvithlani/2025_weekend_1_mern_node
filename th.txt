@@ -250,3 +250,9 @@ redis server --->wsl
 
 broker db --> inmemoery db:
 queue
+
+cache memory:
+
+api --> 1 comp -->1 tim call  -->1 user --> 500 refresh -->same data
+1-->api -->hit -->response ++++ cache memory -->
+2 -->api -->db data -->cache memoory
